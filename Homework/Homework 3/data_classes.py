@@ -2,15 +2,19 @@ import json
 
 class Person(object):
     
-    def __init__(self, name, age, email):
-        self.name = name
+    def __init__(self, first_name, last_name, age, email):
+        self.first_name = first_name
+        self.last_name = last_name 
         self.age = age
         self.email = email
 
     def Save(self):
         with open('SavedData.json', w) as f:
-            f.write({"first_name" : self.name, "age" : self.age, "email" : self.email})
+            json.dump({"first_name" : self.name, "age" : self.age, "email" : self.email})
 
+    def LoadSave(self):
+        with open('SaveData.json') as f:
+            return f.read()
 
 
 
