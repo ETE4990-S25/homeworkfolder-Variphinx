@@ -10,8 +10,26 @@ def menu():
 
         if choice == '1':
             Folder = input("Enter specific directory to search:")
-            os.path.isdir(Folder)
+            if os.path.isdir(Folder):
+                dupes = find_duplicates(Folder)
+                if dupes:
+                    print("\nDuplicates Found:")
+                    for checksum, paths in dupes.items():
+                        if len(paths) > 1:
+                            print(f"Checksum: {checksum}")
+                            for path in paths:
+                                print(f" - {path}")
+                else:
+                    print("No duplicates were found")
 
+            else:
+                print("Invalid Directory, Try another")
+
+        elif choice == '2':
+            break
+
+        else:
+            print("Invalid")
 
 def find_duplicates(directory):
     # search os.walk(directory):
@@ -19,10 +37,11 @@ def find_duplicates(directory):
     for root, _, files in os.walk(directory):
         for file in files:
             file_path = os.path.join(root, file)
-            if file in FileDict:
-                FileDict[file].append(file_path)
+            check = get_checksum(file_path)
+            if check in FileDict:
+                FileDict[check].append(file_path)
             else:
-                FileDict[file] = [file_path]
+                FileDict[check] = [file_path]
     return FileDict
     # use a dictionary to store file names and paths
     # compare files with the same name
@@ -34,3 +53,6 @@ def get_checksum(file_path):
             hash_obj.update(chunk)
     return hash_obj.hexdigest()
 
+
+if __name__ == "__main__":
+    menu()
