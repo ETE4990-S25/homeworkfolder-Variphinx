@@ -22,9 +22,17 @@ def Deal(cards): ## Generator to pick random amount of cards to pass between pla
     yield [Deck.pop() for _ in range(cards)]
 
 def CardsValue(cards):
+    Ace = 0
     value = 0
     for i in range(len(cards)):
         value += cards[i][2]
+        if cards[i][0] == 'A':
+            Ace += 1
+
+    for i in range(Ace):       ##Change value of aces to 1 if needed
+        if value > 21 and Ace > 0:
+            value -= 10
+
     return value
 
 def BlackJack():
@@ -35,8 +43,9 @@ def BlackJack():
 
     while(play):
         flag = True
-        print("\nDealer stays on 17, hits on 16")
-        time.sleep(1)
+        bust = False
+        print("\nDealer stays on 17, hits on 16\n")
+        time.sleep(1.5)
         ShuffleDeck()
 
         player_cards = next(Deal(cards))
@@ -56,23 +65,35 @@ def BlackJack():
 
                 if CardsValue(player_cards) > 21:
                     print("\nYou Busted, pay up")
+                    bust = True
                     flag = False
-                    play = False
                 else:
                     print("\n1) Stay\n2) Hit")
         ## Dealers turn
+        BlackJackDisplayEnd(player_cards, dealer_cards)
         while CardsValue(dealer_cards) < 17:
             new_card = next(Deal(1))
             dealer_cards.append(new_card[0])
-            time.sleep(1)
+            time.sleep(1.5)
             BlackJackDisplayEnd(player_cards, dealer_cards)
+            if CardsValue(dealer_cards) > 21 and not bust:
+                print("The dealer Busted!\nYou win!")
+                bust = True
 
-        if play:
+        if not bust:
             if CardsValue(player_cards) > CardsValue(dealer_cards):
                 print("You win!\nDouble your chips!")
 
             elif CardsValue(player_cards) < CardsValue(dealer_cards):
                 print("Dealer wins\nLose your chips")
+
+            elif CardsValue(player_cards) == CardsValue(dealer_cards):
+                print("Tied with dealer, get your chips back"
+                "")
+        choice = input("Continue? Enter 1 to exit")
+        if choice == '1':
+            play = False
+
 
 
                 
@@ -82,11 +103,11 @@ def BlackJack():
 def BlackJackDisplay(player, dealer):
     print("===================")
     print("\nDealer:        You:")
-    print(f"{dealer[0][0]}{dealer[0][1]}            {player[0][0]}{player[0][1]}")
-    print(f"FD              {player[1][0]}{player[1][1]}")
+    print(f"    {dealer[0][0]}{dealer[0][1]}              {player[0][0]}{player[0][1]}")
+    print(f"    FD              {player[1][0]}{player[1][1]}")
     if len(player) > 2:
         for i in range(len(player)-2):
-            print(f"                {player[i+2][0]}{player[i+2][1]}")
+            print(f"                    {player[i+2][0]}{player[i+2][1]}")
     print("\nTotals:")
     print(f"    {dealer[0][2]}              {CardsValue(player)}")
     print("===================\n")
@@ -96,16 +117,16 @@ def BlackJackDisplayEnd(player, dealer):
     print("===================")
     print("\nDealer:        You:")
     for i in range(min(len(player), len(dealer))):
-        print(f"    {dealer[i][0]}{dealer[i][1]}                {player[i][0]}{player[i][1]}")
+        print(f"    {dealer[i][0]}{dealer[i][1]}             {player[i][0]}{player[i][1]}")
 
 
     if len(player) > len(dealer):
         for i in range(len(player)-len(dealer)):
-            print(f"                    {player[i+len(dealer)-1][0]}{player[i+len(dealer)-1][1]}")
+            print(f"                   {player[i+len(dealer)][0]}{player[i+len(dealer)][1]}")
 
     elif len(player) < len(dealer):
         for i in range(len(dealer)-len(player)):
-                print(f"    {dealer[i+len(player)-1][0]}{dealer[i+len(player)-1][1]}")
+                print(f"    {dealer[i+len(player)][0]}{dealer[i+len(player)][1]}")
     print("\nTotals:")
     print(f"    {CardsValue(dealer)}              {CardsValue(player)}")
     print("===================\n")
