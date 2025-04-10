@@ -1,16 +1,23 @@
-from multiprocessing import Value, Process
+import multiprocessing
+import time
 
-def increment(shared_num):
-    shared_num.value += 1
+def large_calculation(num):
+    result = 0
+    for i in range(1, 10000000):
+        result += i * num
+    print(f'Large calculation result for {num}: {result}')
 
 if __name__ == "__main__":
-    shared_num = Value('i', 0) #i for int
-    processes = [Process(target=increment, args=(shared_num,)) 
-                for _ in range(10)] #group them all
+    start_time = time.time()
 
-    for p in processes:
+    processes = []
+    for i in range(1, 11):
+        p = multiprocessing.Process(target=large_calculation, args=(i,))
+        processes.append(p)
         p.start()
+
     for p in processes:
         p.join()
 
-    print(shared_num.value)
+    end_time = time.time()
+    print(f"Total execution time: {end_time - start_time} seconds")
