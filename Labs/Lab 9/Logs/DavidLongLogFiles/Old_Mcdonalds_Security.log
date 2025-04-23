@@ -1,0 +1,25 @@
+2025-04-22 15:22:07,979 | INFO | Logger.py | Another Day passes on the farm
+2025-04-22 15:22:07,979 | INFO | Logger.py | Old Mcdonalds Animals are all safe
+2025-04-22 15:22:07,979 | WARNING | Logger.py | The wolf appeared
+2025-04-22 15:22:07,979 | WARNING | Logger.py | The hawk is circling overhead
+2025-04-22 15:22:07,979 | WARNING | Logger.py | Bingo isn't acting himself today
+2025-04-22 15:22:07,979 | ERROR | Logger.py | Security Camera Failure
+2025-04-22 15:22:07,979 | ERROR | Logger.py | Bingo has gone missing
+2025-04-22 15:22:07,979 | ERROR | Logger.py | The farm is out of feed
+2025-04-22 15:22:07,979 | ERROR | Logger.py | The cold winter wiped out the crops
+2025-04-22 15:22:07,979 | CRITICAL | Logger.py | The wolf broke onto the farm and killed a sheep
+2025-04-22 15:22:07,981 | CRITICAL | Logger.py | The hawk swooped in and ate the chickens
+2025-04-22 15:22:07,981 | CRITICAL | Logger.py | System Failure, Shutting Down
+2025-04-22 15:27:35,168 | WARNING | Logger.py | Bingo isn't acting himself today
+2025-04-22 15:27:35,168 | ERROR | Logger.py | Bingo has gone missing
+2025-04-22 15:27:35,168 | ERROR | Logger.py | The farm is out of feed
+2025-04-22 15:27:35,169 | ERROR | Logger.py | The cold winter wiped out the crops
+2025-04-22 15:27:35,169 | CRITICAL | Logger.py | The wolf broke onto the farm and killed a sheep
+2025-04-22 15:27:35,169 | CRITICAL | Logger.py | The hawk swooped in and ate the chickens
+2025-04-22 15:27:35,169 | CRITICAL | Logger.py | System Failure, Shutting Down
+2025-04-22 15:27:35,169 | INFO | Logger.py | Another Day passes on the farm
+2025-04-22 15:27:35,169 | INFO | Logger.py | Old Mcdonalds Animals are all safe
+2025-04-22 15:27:35,169 | WARNING | Logger.py | The wolf appeared
+2025-04-22 15:27:35,169 | WARNING | Logger.py | The hawk is circling overhead
+2025-04-22 15:27:35,169 | ERROR | Logger.py | Security Camera Failure
+2025-04-22 15:27:35,169 | CRITICAL | Logger.py | System Failure, Shutting Down
