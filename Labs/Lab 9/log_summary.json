@@ -1,0 +1,22 @@
+{
+    "WARNING": {
+        "Bingo isn't acting himself today": 8,
+        "The wolf appeared": 8,
+        "The hawk is circling overhead": 8
+    },
+    "ERROR": {
+        "Bingo has gone missing": 8,
+        "The farm is out of feed": 8,
+        "The cold winter wiped out the crops": 8,
+        "Security Camera Failure": 8
+    },
+    "CRITICAL": {
+        "The wolf broke onto the farm and killed a sheep": 8,
+        "The hawk swooped in and ate the chickens": 8,
+        "System Failure, Shutting Down": 16
+    },
+    "INFO": {
+        "Another Day passes on the farm": 8,
+        "Old Mcdonalds Animals are all safe": 8
+    }
+}
