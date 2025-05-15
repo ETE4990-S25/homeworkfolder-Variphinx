@@ -1,0 +1,25 @@
+
+Quest 1
+
+
+A worthy challenge for sure
+
+Starting with the grand masters spell used to read the scroll, I first wanted to find out how much scroll data was necessary to download by making a list of all the dates needed
+
+Referring to the grand masters lecture on threading proved cruicial, as there were very helpful examples on doing this exact process
+
+Thread pools proved to be necessary and helpful, downloading the data in chunks made it fun to watch as the Rates folder filled with json files
+
+
+
+
+Quest 2
+
+
+I am feeling motivated and ready to now analyze this data and find trends
+
+The last lab was very fun using matplotlib and seaborn to visually look at data (lab 11) 
+
+Although I did have some issues with the data side of it (not knowing what plot to use or how to show a correlation between data)
+
+I think I have a better understanding now and I think this dataset will be much easier to work with
