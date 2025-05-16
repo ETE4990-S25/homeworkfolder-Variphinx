@@ -23,3 +23,29 @@ The last lab was very fun using matplotlib and seaborn to visually look at data 
 Although I did have some issues with the data side of it (not knowing what plot to use or how to show a correlation between data)
 
 I think I have a better understanding now and I think this dataset will be much easier to work with
+
+
+Onto the analysis, after finally getting the graphs up and running it is interesting to see how the exchange rates change over time.
+
+The biggest, most consistent pattenrn I see is a dip in 2020 right when covid started
+
+Also from 2011-2016 theres always a drop overall
+
+The randomly picked currencies that were downloaded were IDR, KRW, CNY, BND, and AUD
+
+I noticed the quest 1 code output a kind of error in the RunHere jupyter notebook when downloading BND
+
+It was like it got stuck, the only way to stop it was to restart the kernal, I did notice it looks like it skipped 3 days somewhere, its showing 5123 files when it should be 5126
+
+Because of this an error occurred in quest 2 when trying to format the data to a data frame :/
+
+So actually instead of BND I downloaded a 6th to use which ended of being CLP
+
+The strangest data i saw by far was from CNY to AUD, I created a data gallery at the bottom of Quest 2 to show off any other strange data I find during this process
+
+After more analysis, I notice the strange data is all coming from AUD, Im not sure if there was a problem when downloading but the data always seems to show a straight line
+
+I searched the actual economic exchange rate and it defintely is not the same, there must have been something wrong with the download, strange that the data would be consistent like that though?
+
+overall the data ive seen declines ultimately, slowly from 2011-2016, then a huge dip right after 2020 which quickly bounces back, then an even bigger dip in 2022 that stays down until the present
+
